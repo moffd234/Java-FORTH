@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 /*
@@ -12,11 +13,22 @@ import java.util.Scanner;
  */
 
 public class ForthVM {
+
     public static void main(String[] args){
+
         String mainStack = "";
-        Scanner input = new Scanner(System.in);
+        Scanner inputScanner = new Scanner(System.in);
+        String input = "";
+        while(!Objects.equals(input, "exit")){
+            input = getNextInput(inputScanner);
+
+        }
 
 
+    }
+
+    private static String getNextInput(Scanner inputScanner){
+        return inputScanner.nextLine();
     }
 
 }
