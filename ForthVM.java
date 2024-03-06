@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -18,17 +21,19 @@ public class ForthVM {
 
         String mainStack = "";
         Scanner inputScanner = new Scanner(System.in);
-        String input = "";
+        ArrayList<String> input = new ArrayList<String>();
         while(!Objects.equals(input, "exit")){
             input = getNextInput(inputScanner);
+
 
         }
 
 
     }
 
-    private static String getNextInput(Scanner inputScanner){
-        return inputScanner.nextLine();
+    private static ArrayList<String> getNextInput(Scanner inputScanner){
+        String[] input = inputScanner.nextLine().split(" ");
+        return new ArrayList<String>(Arrays.asList(input));
     }
 
 }
